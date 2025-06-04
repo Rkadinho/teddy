@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 export class TeddyBotaoComponent {
   @Input() texto= '';
   @Input() desativado= false;
+  @Input() tamanho: 'pequeno' | 'medio' | 'grande' = 'pequeno';
   @Output() clique = new EventEmitter<Event>();
 
   onClique(event: Event) {
