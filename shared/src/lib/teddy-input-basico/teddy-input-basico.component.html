@@ -1,0 +1,16 @@
+<div class="input">
+  <input
+    type="text"
+    [(ngModel)]="valor"
+    (ngModelChange)="onPegarValor($event)"
+    (input)="onPegarValor($event)"
+    [placeholder]="placeholder"
+    [required]="obrigatorio"
+    #campo="ngModel"
+    [ngClass]="{'input-padrao-erro': obrigatorio && campo.invalid && campo.touched}"
+    class="input-padrao"
+  />
+  <div class="erro" *ngIf="obrigatorio && campo.invalid && campo.touched">
+    {{textoErro}}
+  </div>
+</div>

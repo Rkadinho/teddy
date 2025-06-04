@@ -1,0 +1,29 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  width: 521px;
+  height: 60px;
+}
+
+.input-padrao {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-padrao:focus {
+  border-color: #f25c05;
+  outline: none;
+}
+
+.erro {
+  color: rgb(255, 0, 0);;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.input-padrao-erro {
+  border-color: rgb(255, 0, 0);
+}

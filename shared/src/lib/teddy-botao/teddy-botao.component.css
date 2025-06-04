@@ -3,14 +3,32 @@
   color: white;
   font-weight: bold;
   border: none;
-  padding: 12px 20px;
   border-radius: 4px;
-  font-size: 16px;
   cursor: pointer;
-  width: 300px;
-  transition: background-color 0.3s ease;
+  font-size: 24px;
 }
 
 .botao:hover {
   background-color: #d84f00;
+}
+
+.botao:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.pequeno {
+  font-size: 12px;
+  width: 150px;
+}
+
+.medio {
+  width: 521px;
+  height: 60px;
+}
+
+.grande {
+  font-size: 18px;
+  width: 300px;
 }

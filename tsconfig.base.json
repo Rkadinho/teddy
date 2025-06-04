@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@teddy/teddy-botao": ["shared/src/index.ts"],
+      "@teddy/lib": ["shared/src/index.ts"],
+      "dashboard/Routes": ["dashboard/src/app/remote-entry/entry.routes.ts"],
       "inicio/Routes": ["inicio/src/app/remote-entry/entry.routes.ts"]
     }
   },

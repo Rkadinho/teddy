@@ -1,4 +1,8 @@
 <div class="container">
-  <h1>Olá, seja bem-vindo!</h1>
-  <lib-teddy-botao [texto]="textoBotao" [desativado]="false"></lib-teddy-botao>
+  <img src="teddyLogo.png" alt="Minha Imagem" />
+  <h1>{{titulo}}</h1>
+  <form>
+    <lib-teddy-input-basico [obrigatorio]="obrigatorio" [placeholder]="placeholder"(pegarValor)="nome = $event"></lib-teddy-input-basico>
+    <lib-teddy-botao [texto]="textoBotao" [desativado]="!nome" tamanho="medio"></lib-teddy-botao>
+  </form>
 </div>
