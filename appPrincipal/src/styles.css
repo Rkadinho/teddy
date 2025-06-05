@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+p, h1 {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.link-ativo {
+  color: #d84f00 !important;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover{
+  color:#d84f00;
+}
+
+body {
+  margin: 0;
+}
+

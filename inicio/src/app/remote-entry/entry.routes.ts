@@ -2,5 +2,5 @@ import { Route } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 
 export const remoteRoutes: Route[] = [
-  { path: 'inicio', component: LoginComponent },
+  { path: '', component: LoginComponent },
 ];

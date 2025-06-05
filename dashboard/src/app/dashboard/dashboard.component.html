@@ -1,10 +1,15 @@
 <div>
-  <div>
-    <div>
-      <app-navegacao></app-navegacao>
-    </div>
-    <div>
-      <h1>dashboard</h1>
-    </div>
+  <app-navegacao></app-navegacao>
+</div>
+<div class="containerPrincipal">
+  <div class="clientesTexto">
+    <p>{{clientesEncontrados}}</p>
+    <p>{{clientesPagina}}</p>
   </div>
+  <div>
+    <lib-teddy-botao [texto]="textoBotao" tamanho="grande" estilo="secundario"></lib-teddy-botao>
+  </div>
+</div>
+<div *ngIf="!nome">
+  <p>Pagina não encontrada</p>
 </div>
