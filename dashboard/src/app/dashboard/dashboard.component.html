@@ -4,20 +4,55 @@
 <div class="containerPrincipal">
   <div class="clientesTexto">
     <p><strong>{{listaClientes.length}}</strong>{{clientesEncontrados}}</p>
-    <p>{{clientesPagina}}</p>
+    <p>{{clientesPagina}} <input type="text" min="1" [(ngModel)]="clientesPorPagina" (change)="aoMudarClientesPorPagina()" style="width: 60px;"/></p>
   </div>
   <div class="grid">
     <div *ngFor="let cliente of listaClientes">
       <lib-teddy-card
         [nome]='cliente.name'
         [salario]="formatarValor(cliente.salary)"
-        [empresa]="formatarValor(cliente.companyValuation)"></lib-teddy-card>
+        [empresa]="formatarValor(cliente.companyValuation)"
+        (editar)="editarCliente(cliente)"
+        (excluir)="excluirClienteModal(cliente)">
+      </lib-teddy-card>
     </div>
   </div>
   <div>
-    <lib-teddy-botao [texto]="textoBotao" tamanho="grande" estilo="secundario" ></lib-teddy-botao>
+    <lib-teddy-botao [texto]="textoBotao" tamanho="grande" estilo="secundario" (clique)="criarCliente()"></lib-teddy-botao>
+  </div>
+  <div class="paginacao" *ngIf="totalPaginas > 1">
+    <ng-container *ngFor="let pagina of paginasPaginacao" class="containerPaginacao">
+      <span *ngIf="pagina === '...'">...</span>
+      <button *ngIf="pagina !== '...'"
+              [class.pagina-atual]="pagina === paginaAtual"
+              (click)="irParaPagina(+pagina)"
+              class="botaoPaginacao">
+        {{ pagina }}
+      </button>
+    </ng-container>
   </div>
 </div>
 <div *ngIf="!nome">
   <p>Pagina não encontrada</p>
+</div>
+
+<div *ngIf="modalCriarCliente || modalEditarCliente">
+  <lib-teddy-modal
+    [titulo]="modalCriarCliente === true ? tituloModal : tituloEditarModal"
+    [tituloBotao]="tituloModalBotao"
+    [cliente]="novoCliente"
+    (fechar)="fecharModal()"
+    (salvar)="onSalvar()">
+  </lib-teddy-modal>
+</div>
+
+<div *ngIf="modalExcluirCliente">
+  <lib-teddy-modal-excluir
+    [titulo]="tituloExcluirModal"
+    [tituloBotao]="tituloModalBotaoExcluir"
+    [texto]="textoExcluirModal"
+    [nomeCliente]="nomeCliente"
+    (fechar)="fecharModal()"
+    (excluir)="excluirCliente()">
+  </lib-teddy-modal-excluir>
 </div>

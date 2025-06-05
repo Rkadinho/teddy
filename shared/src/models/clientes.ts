@@ -1,7 +1,7 @@
 export interface Clientes {
   nome: string;
-  salario: number;
-  valorEmpresa: number;
+  salario: string;
+  valorEmpresa: string;
 }
 
 export interface clientesResponse {
@@ -17,4 +17,10 @@ export interface response {
   clients: clientesResponse[];
   currentPage: number;
   totalPage: number;
+}
+
+export interface cleintesRequest {
+  name: string;
+  salary: number;
+  companyValuation: number;
 }

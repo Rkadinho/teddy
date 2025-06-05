@@ -20,7 +20,9 @@
 
 .pequeno {
   font-size: 12px;
-  width: 150px;
+  width: 100%;
+  padding: 10px;
+  height: 40px;
 }
 
 .medio {

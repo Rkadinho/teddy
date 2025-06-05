@@ -4,8 +4,28 @@
   <p>Empresa: {{ empresa }}</p>
 
   <div class="icones">
-    <img (click)="onAdicionar()" src="selecionar.png" />
-    <img (click)="onEditar()" src="editar.png"/>
-    <img (click)="onExcluir()" src="lixeira.png"/>
+    <img
+      src="selecionar.png"
+      alt="Adicionar cliente"
+      tabindex="0"
+      (click)="onAdicionar()"
+      (keydown.enter)="onAdicionar()"
+    />
+
+    <img
+      src="editar.png"
+      alt="Editar cliente"
+      tabindex="0"
+      (click)="onEditar()"
+      (keydown.enter)="onEditar()"
+    />
+
+    <img
+      src="lixeira.png"
+      alt="Excluir cliente"
+      tabindex="0"
+      (click)="onExcluir()"
+      (keydown.enter)="onExcluir()"
+    />
   </div>
 </div>

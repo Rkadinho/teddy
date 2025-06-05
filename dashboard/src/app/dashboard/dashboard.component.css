@@ -19,6 +19,37 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+  margin-bottom: 16px;
 }
 
+.paginacao {
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: large;
+  margin-top: 16px;
+  align-items: flex-end;
+}
+
+.botaoPaginacao {
+  background-color: transparent;
+  border: none;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.botaoPaginacao:hover {
+  color:#f25c05;
+  cursor: pointer;
+}
+
+.pagina-atual{
+  background-color: #f25c05;
+  color: white;
+  border-radius: 4px;
+}
+
+.pagina-atual:hover {
+  color: white
+}
 

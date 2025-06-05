@@ -4,3 +4,5 @@ export * from './service/dados-cache.service';
 export * from './lib/teddy-card/teddy-card.component';
 export * from './service/servico-clientes.service';
 export * from './models/clientes';
+export * from './lib/teddy-modal/teddy-modal.component';
+export * from './lib/teddy-modal-excluir/teddy-modal-excluir.component';
