@@ -11,6 +11,7 @@ export class TeddyBotaoComponent {
   @Input() texto= '';
   @Input() desativado= false;
   @Input() tamanho: 'pequeno' | 'medio' | 'grande' = 'pequeno';
+  @Input() tipo: 'submit' | 'button' | 'reset' = 'submit';
   @Output() clique = new EventEmitter<Event>();
 
   onClique(event: Event) {

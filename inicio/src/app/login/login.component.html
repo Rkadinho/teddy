@@ -3,6 +3,6 @@
   <h1>{{titulo}}</h1>
   <form (submit)="entrar(); $event.preventDefault()">
     <lib-teddy-input-basico [obrigatorio]="obrigatorio" [placeholder]="placeholder" (pegarValor)="nome = $event"></lib-teddy-input-basico>
-    <lib-teddy-botao [texto]="textoBotao" [desativado]="!nome" tamanho="medio" (clique)="entrar()"></lib-teddy-botao>
+    <lib-teddy-botao [texto]="textoBotao" [desativado]="!nome" tamanho="medio" tipo="submit" (clique)="entrar()"></lib-teddy-botao>
   </form>
 </div>

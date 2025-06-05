@@ -4,15 +4,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DadosCacheService {
-
-  private _nome = '';
+  private readonly STORAGE_KEY = 'nomeUsuario';
 
   set nomeUsuario(nome: string) {
-    this._nome = nome;
+    localStorage.setItem(this.STORAGE_KEY, nome);
   }
 
   get nomeUsuario(): string {
-    return this._nome;
+    return localStorage.getItem(this.STORAGE_KEY) || '';
+  }
+
+  limparDados() {
+    localStorage.removeItem(this.STORAGE_KEY);
   }
 
 }
