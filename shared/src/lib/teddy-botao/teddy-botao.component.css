@@ -9,7 +9,7 @@
 }
 
 .botao:hover {
-  background-color: #f25c05;
+  background-color: #d84f00;
 }
 
 .botao:disabled {
@@ -38,4 +38,9 @@
   background-color: transparent;
   border: 2px solid #f25c05;
   color: #f25c05;
+}
+
+.secundario:hover {
+  color: white;
+  background-color: #f25c05;
 }

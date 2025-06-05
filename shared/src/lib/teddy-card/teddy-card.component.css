@@ -1,0 +1,29 @@
+.card {
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 90%;
+  min-width: 90%;
+  margin: 10px;
+  min-height: 138px;
+  max-height: 138px;
+  text-align: center;
+}
+
+.nome {
+  font-weight: bold;
+}
+
+.icones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.excluir {
+  color: red;
+}

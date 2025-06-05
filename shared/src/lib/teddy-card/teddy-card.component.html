@@ -1,0 +1,11 @@
+<div class="card">
+  <p class="nome">{{ nome }}</p>
+  <p>Salário: {{ salario }}</p>
+  <p>Empresa: {{ empresa }}</p>
+
+  <div class="icones">
+    <img (click)="onAdicionar()" src="selecionar.png" />
+    <img (click)="onEditar()" src="editar.png"/>
+    <img (click)="onExcluir()" src="lixeira.png"/>
+  </div>
+</div>

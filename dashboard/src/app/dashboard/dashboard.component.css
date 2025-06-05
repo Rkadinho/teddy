@@ -1,3 +1,11 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: rgba(240, 237, 237, 0.404);
+}
+.navegacao{
+  background-color: white ;
+}
 .containerPrincipal {
   padding: 20px 80px 50px 80px;
 }
@@ -6,3 +14,11 @@
     display: flex;
     justify-content: space-between;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+
