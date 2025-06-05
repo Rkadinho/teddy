@@ -1,0 +1,42 @@
+
+<div class="modal-box">
+  <div class="icones">
+    <img src="teddyLogo.png" alt="Logo da empresa Teddy" />
+  </div>
+
+  <div class="modal-titulo">
+    <h3>{{titulo}}</h3>
+    <button class="botaoFechar" (click)="fecharModal()">×</button>
+  </div>
+
+  <form (ngSubmit)="salvarCliente()" #form="ngForm">
+    <input
+      type="text"
+      placeholder="Digite o nome:"
+      [(ngModel)]="cliente.nome"
+      name="nome"
+      required
+    />
+    <input
+      type="text"
+      placeholder="Digite o salário:"
+      [(ngModel)]="cliente.salario"
+      name="salario"
+      required
+    />
+    <input
+      type="text"
+      placeholder="Digite o valor da empresa:"
+      [(ngModel)]="cliente.valorEmpresa"
+      name="empresa"
+      required
+    />
+
+    <lib-teddy-botao
+      [texto]="tituloBotao"
+      tamanho="pequeno"
+      [desativado]="form.invalid === true"
+      (clique)="salvarCliente()">
+    </lib-teddy-botao>
+  </form>
+</div>

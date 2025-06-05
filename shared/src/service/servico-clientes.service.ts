@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Clientes, clientesResponse, response } from '../models/clientes';
+import { cleintesRequest, Clientes, clientesResponse, response } from '../models/clientes';
 
 @Injectable({
   providedIn: 'root'
@@ -11,23 +11,27 @@ export class ServicoClientesService {
 
   constructor(private http: HttpClient) {}
 
-  listarClientes(): Observable<response[]> {
-    return this.http.get<response[]>(this.apiUrl);
+  listarClientes(page: number, limit: number): Observable<response[]> {
+    const params = { page, limit };
+    return this.http.get<response[]>(this.apiUrl, {params});
   }
 
   buscarClientes(id: number): Observable<Clientes> {
     return this.http.get<Clientes>(`${this.apiUrl}/${id}`);
   }
 
-  criarCLiente(cliente: Clientes): Observable<Clientes> {
-    return this.http.post<Clientes>(this.apiUrl, cliente);
+  criarCliente(cliente: cleintesRequest): Observable<clientesResponse> {
+    return this.http.post<clientesResponse>(this.apiUrl, cliente);
   }
 
-  atualizarCliente(id: number, dados: Partial<Clientes>): Observable<Clientes> {
-    return this.http.patch<Clientes>(`${this.apiUrl}/${id}`, dados);
+  atualizarCliente(id: number, dados: Partial<cleintesRequest>): Observable<clientesResponse> {
+    return this.http.patch<clientesResponse>(`${this.apiUrl}/${id}`, dados);
   }
 
-  deletarCliente(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  deletarCliente(id: number): Observable<string> {
+    return this.http.delete(`${this.apiUrl}/${id}`, {
+      responseType: 'text',
+      observe: 'body'
+    }) as Observable<string>;
   }
 }
