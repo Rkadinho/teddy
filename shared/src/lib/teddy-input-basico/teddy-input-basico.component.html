@@ -2,8 +2,7 @@
   <input
     type="text"
     [(ngModel)]="valor"
-    (ngModelChange)="onPegarValor($event)"
-    (input)="onPegarValor($event)"
+    (input)="onInput($event)"
     [placeholder]="placeholder"
     [required]="obrigatorio"
     #campo="ngModel"

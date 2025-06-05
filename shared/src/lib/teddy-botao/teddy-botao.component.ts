@@ -14,6 +14,6 @@ export class TeddyBotaoComponent {
   @Output() clique = new EventEmitter<Event>();
 
   onClique(event: Event) {
-    this.clique.emit(event)
+    this.clique.emit(event);
   }
 }

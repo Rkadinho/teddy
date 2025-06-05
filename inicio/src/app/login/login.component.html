@@ -1,8 +1,8 @@
 <div class="container">
   <img src="teddyLogo.png" alt="Minha Imagem" />
   <h1>{{titulo}}</h1>
-  <form>
-    <lib-teddy-input-basico [obrigatorio]="obrigatorio" [placeholder]="placeholder"(pegarValor)="nome = $event"></lib-teddy-input-basico>
-    <lib-teddy-botao [texto]="textoBotao" [desativado]="!nome" tamanho="medio"></lib-teddy-botao>
+  <form (submit)="entrar(); $event.preventDefault()">
+    <lib-teddy-input-basico [obrigatorio]="obrigatorio" [placeholder]="placeholder" (pegarValor)="nome = $event"></lib-teddy-input-basico>
+    <lib-teddy-botao [texto]="textoBotao" [desativado]="!nome" tamanho="medio" (clique)="entrar()"></lib-teddy-botao>
   </form>
 </div>

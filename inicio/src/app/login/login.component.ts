@@ -1,4 +1,4 @@
-import { TeddyInputBasicoComponent, TeddyBotaoComponent } from '@teddy/lib';
+import { TeddyInputBasicoComponent, TeddyBotaoComponent, DadosCacheService } from '@teddy/lib';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -20,12 +20,14 @@ export class LoginComponent {
   alt = 'Logo Teddy';
   altura = 24;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private dadosCache: DadosCacheService
+  ) {}
 
   entrar() {
-    if (this.nome.trim()) {
-      this.router.navigate(['/dashboard'], { queryParams: { nome: this.nome } });
-    }
+    this.dadosCache.nomeUsuario = this.nome;
+    this.router.navigate(['/dashboard']);
   }
 
 }
