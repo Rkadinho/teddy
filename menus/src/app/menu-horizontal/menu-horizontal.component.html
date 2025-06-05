@@ -5,8 +5,22 @@
       <img src="teddyLogo.png" alt="Icone Menu"/>
     </div>
     <div class="menuHorizontal">
-      <p class="mr-20"><a routerLink="/dashboard" routerLinkActive="link-ativo" [routerLinkActiveOptions]="{ exact: true }">{{abaClientes}}</a></p>
-      <p class="mr-20"><a>{{abaClientesSelecionados}}</a></p>
+      <p class="mr-20">
+        <a
+          routerLink="/dashboard"
+          routerLinkActive="link-ativo"
+          [routerLinkActiveOptions]="{ exact: true }">
+            {{abaClientes}}
+        </a>
+      </p>
+      <p class="mr-20">
+        <a
+          routerLink="/clientesSelecionados"
+          routerLinkActive="link-ativo"
+          [routerLinkActiveOptions]="{ exact: true }">
+          {{abaClientesSelecionados}}
+        </a>
+      </p>
       <p><a href="/" (click)="sair()">{{abaSair}}</a></p>
     </div>
     <div>

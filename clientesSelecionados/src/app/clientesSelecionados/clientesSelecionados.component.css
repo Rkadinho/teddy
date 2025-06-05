@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: rgba(240, 237, 237, 0.404);
+}
+.containerPrincipal {
+  padding: 20px 80px 50px 80px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}

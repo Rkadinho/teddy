@@ -1,0 +1,112 @@
+{
+  "name": "clientesSelecionados",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "clientesSelecionados/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/clientesSelecionados",
+        "index": "clientesSelecionados/src/index.html",
+        "main": "clientesSelecionados/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "clientesSelecionados/tsconfig.app.json",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "clientesSelecionados/public"
+          }
+        ],
+        "styles": ["clientesSelecionados/src/styles.css"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "clientesSelecionados/webpack.config.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "clientesSelecionados/webpack.prod.config.ts"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@nx/angular:dev-server",
+      "options": {
+        "port": 4204,
+        "publicHost": "http://localhost:4204"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "clientesSelecionados:build:production"
+        },
+        "development": {
+          "buildTarget": "clientesSelecionados:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "clientesSelecionados:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "clientesSelecionados/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "clientesSelecionados:build",
+        "port": 4204,
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "clientesSelecionados:build:development"
+        },
+        "production": {
+          "buildTarget": "clientesSelecionados:build:production"
+        }
+      }
+    }
+  }
+}

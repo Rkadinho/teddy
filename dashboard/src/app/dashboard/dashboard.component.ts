@@ -9,18 +9,17 @@ import { DadosCacheService,
         TeddyModalExcluirComponent} from '@teddy/lib';
 import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavegacaoComponent } from "../navegacao/navegacao.component";
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-dashboard',
   imports: [
-    NavegacaoComponent,
     CommonModule,
     TeddyBotaoComponent,
     TeddyCardComponent,
     TeddyModalComponent,
     TeddyModalExcluirComponent,
-    FormsModule],
+    FormsModule,
+],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
@@ -49,6 +48,7 @@ export class DashboardComponent {
   totalPaginas = 1;
   paginaAtual = 1;
   clientesPorPagina = 16;
+  clientesSelecionados: clientesResponse[] = [];
 
   constructor(
     private dadosCache: DadosCacheService,
@@ -200,5 +200,9 @@ export class DashboardComponent {
       paginas.push(ultimaPagina);
     }
     return paginas;
+  }
+
+  adicionarClienteSelecionado(cliente: clientesResponse) {
+    this.dadosCache.adicionarClienteSelecionado(cliente);
   }
 }

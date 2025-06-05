@@ -1,1 +1,7 @@
-<router-outlet></router-outlet>
+<div class="layout">
+  <app-menu-vertical *ngIf="router.url !== '/'"></app-menu-vertical>
+  <div class="main-content">
+    <app-menu-horizontal *ngIf="router.url !== '/'"></app-menu-horizontal>
+    <router-outlet></router-outlet>
+  </div>
+</div>

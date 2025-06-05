@@ -1,15 +1,15 @@
-import { CommonModule } from '@angular/common';
+import { DadosCacheService } from '@teddy/lib';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DadosCacheService } from '@teddy/lib';
+import { CommonModule } from '@angular/common';
 
 @Component({
-   imports: [RouterModule, CommonModule],
-  selector: 'app-navegacao',
-  templateUrl: './navegacao.component.html',
-  styleUrls: ['./navegacao.component.css']
+  selector: 'app-menu-horizontal',
+  imports: [RouterModule, CommonModule],
+  templateUrl: './menu-horizontal.component.html',
+  styleUrls: ['./menu-horizontal.component.css']
 })
-export class NavegacaoComponent {
+export class MenuHorizontalComponent{
   nome = ''
   abaClientes = 'Clientes';
   abaClientesSelecionados = 'Clientes selecionados';
@@ -23,4 +23,5 @@ export class NavegacaoComponent {
   sair() {
     this.dadosCache.limparDados()
   }
+
 }
