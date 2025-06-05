@@ -1,0 +1,38 @@
+
+.containerPrincipal {
+  padding: 16px 40px 0px 40px;
+  margin-bottom: 16px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerIcone {
+  display: flex;
+  align-items: center;
+}
+
+.iconeMenu {
+  width: 24px;
+  height: 20px;
+  margin-right: 26px;
+}
+
+.menuHorizontal {
+  display: flex;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.nome {
+  text-transform: capitalize;
+}
+
+.divider {
+  border-bottom: 1px solid rgba(88, 86, 86, 0.377);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.795);
+}

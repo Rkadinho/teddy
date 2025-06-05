@@ -1,4 +1,11 @@
 <div>
-  <button [disabled]="desativado" (click)="onClique($event)" [ngClass]="tamanho" [type]="tipo" class="botao">{{texto}}</button>
+  <button
+    [disabled]="desativado"
+    (click)="onClique($event)"
+    [ngClass]="[tamanho, estilo]"
+    [type]="tipo"
+    class="botao">
+    {{texto}}
+  </button>
 </div>
 

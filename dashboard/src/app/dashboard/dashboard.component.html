@@ -1,16 +1,15 @@
+<div>
+  <app-navegacao></app-navegacao>
+</div>
 <div class="containerPrincipal">
-  <div class="container">
-    <div class="containerIcone">
-      <img src="iconeMenu.png" alt="Icone Menu" class="iconeMenu"/>
-      <img src="teddyLogo.png" alt="Icone Menu"/>
-    </div>
-    <div class="menuHorizontal">
-      <p class="mr-20"><a routerLink="/dashboard" routerLinkActive="link-ativo" [routerLinkActiveOptions]="{ exact: true }">{{abaClientes}}</a></p>
-      <p class="mr-20"><a>{{abaClientesSelecionados}}</a></p>
-      <p><a href="/">{{abaSair}}</a></p>
-    </div>
-    <div>
-      <p>{{textoBoasVindas}}<strong class="nome">{{this.nome}}</strong></p>
-    </div>
+  <div class="clientesTexto">
+    <p>{{clientesEncontrados}}</p>
+    <p>{{clientesPagina}}</p>
   </div>
+  <div>
+    <lib-teddy-botao [texto]="textoBotao" tamanho="grande" estilo="secundario"></lib-teddy-botao>
+  </div>
+</div>
+<div *ngIf="!nome">
+  <p>Pagina não encontrada</p>
 </div>
