@@ -1,13 +1,21 @@
-<div>
+<div class="navegacao">
   <app-navegacao></app-navegacao>
 </div>
 <div class="containerPrincipal">
   <div class="clientesTexto">
-    <p>{{clientesEncontrados}}</p>
+    <p><strong>{{listaClientes.length}}</strong>{{clientesEncontrados}}</p>
     <p>{{clientesPagina}}</p>
   </div>
+  <div class="grid">
+    <div *ngFor="let cliente of listaClientes">
+      <lib-teddy-card
+        [nome]='cliente.name'
+        [salario]="formatarValor(cliente.salary)"
+        [empresa]="formatarValor(cliente.companyValuation)"></lib-teddy-card>
+    </div>
+  </div>
   <div>
-    <lib-teddy-botao [texto]="textoBotao" tamanho="grande" estilo="secundario"></lib-teddy-botao>
+    <lib-teddy-botao [texto]="textoBotao" tamanho="grande" estilo="secundario" ></lib-teddy-botao>
   </div>
 </div>
 <div *ngIf="!nome">

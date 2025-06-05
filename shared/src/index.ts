@@ -1,3 +1,6 @@
 export * from './lib/teddy-botao/teddy-botao.component';
 export * from './lib/teddy-input-basico/teddy-input-basico.component';
 export * from './service/dados-cache.service';
+export * from './lib/teddy-card/teddy-card.component';
+export * from './service/servico-clientes.service';
+export * from './models/clientes';

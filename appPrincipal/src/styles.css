@@ -8,7 +8,7 @@ a {
 }
 
 .link-ativo {
-  color: #d84f00 !important;
+  color: #f25c05 !important;
   text-decoration: underline;
 }
 
@@ -17,10 +17,14 @@ a:visited {
 }
 
 a:hover{
-  color:#d84f00;
+  color:#f25c05;
 }
 
 body {
   margin: 0;
+}
+
+body{
+   background-color: rgba(240, 237, 237, 0.404);
 }
 
