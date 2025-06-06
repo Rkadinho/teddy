@@ -12,5 +12,5 @@
     "src/**/*.test.ts",
     "src/**/*.spec.ts",
     "src/**/*.d.ts"
-  ]
+, "test/service/menu-service.service.spec.ts", "test/service/servico-clientes.service.spec.ts"  ]
 }

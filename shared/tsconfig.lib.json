@@ -5,7 +5,7 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": []
+    "types": ["jest"]
   },
   "exclude": [
     "src/**/*.spec.ts",
@@ -13,5 +13,5 @@
     "jest.config.ts",
     "src/**/*.test.ts"
   ],
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "test/service/dados-cache.service.spec.ts", "test/service/menu-service.service.spec.ts", "test/service/servico-clientes.service.spec.ts"]
 }
