@@ -1,4 +1,4 @@
-import { DadosCacheService } from '@teddy/lib';
+import { DadosCacheService, MenuService } from '@teddy/lib';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -16,12 +16,19 @@ export class MenuHorizontalComponent{
   abaSair = 'Sair';
   textoBoasVindas = 'Olá, '
 
-  constructor(private dadosCache: DadosCacheService) {
+  constructor(
+    private dadosCache: DadosCacheService,
+    private menuService: MenuService
+  ) {
     this.nome = this.dadosCache.nomeUsuario;
   }
 
   sair() {
     this.dadosCache.limparDados()
+  }
+
+  toggleMenu() {
+    this.menuService.toggleMenu();
   }
 
 }

@@ -3,14 +3,7 @@
   height: 100vh;
 }
 
-app-menu-vertical {
-  width: 250px;
-  flex-shrink: 0;
-}
-
 .main-content {
   flex-grow: 1;
-  padding: 20px;
   overflow-y: auto;
-  margin-left: 60px;
 }

@@ -1,7 +1,12 @@
 <div class="containerPrincipal" *ngIf="nome">
   <div class="container" >
     <div class="containerIcone">
-      <img src="iconeMenu.png" alt="Icone Menu" class="iconeMenu"/>
+      <img
+        src="iconeMenu.png"
+        alt="Icone Menu"
+        class="iconeMenu"
+        (click)="toggleMenu()"
+        (keydown.enter)="toggleMenu()" tabindex="0"/>
       <img src="teddyLogo.png" alt="Icone Menu"/>
     </div>
     <div class="menuHorizontal">

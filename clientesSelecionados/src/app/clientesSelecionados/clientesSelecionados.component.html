@@ -1,7 +1,14 @@
 <div class="containerPrincipal" *ngIf="clientes && clientes.length > 0">
-  <h3>{{titulo}}</h3>
+  <div class="clientesTexto">
+    <h3>{{titulo}}</h3>
+    <div *ngIf="clientes.length > 16">
+      <p>
+        {{ clientesPagina }}
+        <input type="text" [(ngModel)]="clientesPorPagina" (change)="aoMudarClientesPorPagina()" style="width: 60px;" />
+      </p></div>
+  </div>
   <div class="grid">
-    <div *ngFor="let cliente of clientes">
+    <div *ngFor="let cliente of clientesPaginados">
       <lib-teddy-card
         [nome]='cliente.name'
         tipo="selecionado"

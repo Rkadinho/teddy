@@ -10,10 +10,8 @@ body :host{
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  position: fixed;
   z-index: 1000;
   border-radius: 0px 25px 0px 0px;
-
 }
 
 .logo {
@@ -33,7 +31,7 @@ body :host{
 }
 
 .menu {
- display: grid;
+  display: grid;
   gap: 10px;
   justify-content: space-around;
   justify-items: start;
@@ -43,23 +41,37 @@ body :host{
   display: flex;
   align-items: center;
   padding: 12px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  padding-right: 21px;
   transition: background 0.2s;
-}
+  text-decoration: none;
+  font-weight: bolder;
 
-.menu-item:hover {
-  background-color: #f3f3f3;
 }
 
 .menu-item .material-icons {
   margin-right: 10px;
 }
 
-.menu-item.active {
-  color: #ff6a00;
-  font-weight: bold;
-  background-color: #ffece0;
+.setaFechar {
+  position: absolute;
+  left: 217px;
+  top: 139px;
+  cursor: pointer;
+}
+
+.link-ativo {
+  width: 100%;
+  border-right: 4px solid #f25c05;
+  padding-right: 7px;
+  .icones {
+    filter: invert(48%) sepia(83%) saturate(4995%) hue-rotate(355deg) brightness(102%) contrast(102%);
+  }
+}
+  .selecionados {
+    padding-right: 7px;
+  }
+
+.icones {
+  margin-right: 10px;
+  filter: brightness(0) invert(0);
 }

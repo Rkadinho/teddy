@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-p, h1 {
+p, h1, a, h2, h3 {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -17,14 +17,19 @@ a:visited {
 }
 
 a:hover{
-  color:#f25c05;
+  filter: invert(48%) sepia(83%) saturate(4995%) hue-rotate(355deg) brightness(102%) contrast(102%);
 }
 
 body {
   margin: 0;
 }
 
-body{
-   background-color: rgba(240, 237, 237, 0.404);
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(50, 50, 50, 0.7);
+  z-index: 999;
 }
-
