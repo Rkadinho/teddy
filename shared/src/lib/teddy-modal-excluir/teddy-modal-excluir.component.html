@@ -1,21 +1,22 @@
+<div class="modal-overlay">
+  <div class="modal-box">
+    <div class="icones">
+      <img src="teddyLogo.png" alt="Logo da empresa Teddy" />
+    </div>
 
-<div class="modal-box">
-  <div class="icones">
-    <img src="teddyLogo.png" alt="Logo da empresa Teddy" />
+    <div class="modal-titulo">
+      <h3>{{titulo}}</h3>
+      <button class="botaoFechar" (click)="fecharModal()">×</button>
+    </div>
+
+    <div>
+      <p>{{texto}}<strong>{{nomeCliente}}</strong></p>
+    </div>
+
+    <lib-teddy-botao
+      [texto]="tituloBotao"
+      tamanho="pequeno"
+      (clique)="excluirCliente()">
+    </lib-teddy-botao>
   </div>
-
-  <div class="modal-titulo">
-    <h3>{{titulo}}</h3>
-    <button class="botaoFechar" (click)="fecharModal()">×</button>
-  </div>
-
-  <div>
-    <p>{{texto}}<strong>{{nomeCliente}}</strong></p>
-  </div>
-
-  <lib-teddy-botao
-    [texto]="tituloBotao"
-    tamanho="pequeno"
-    (clique)="excluirCliente()">
-  </lib-teddy-botao>
 </div>

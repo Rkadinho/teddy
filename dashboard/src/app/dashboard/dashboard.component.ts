@@ -6,21 +6,21 @@ import { DadosCacheService,
         TeddyModalComponent,
         Clientes,
         cleintesRequest,
-        TeddyModalExcluirComponent} from '@teddy/lib';
+        TeddyModalExcluirComponent,
+        ToastService} from '@teddy/lib';
 import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavegacaoComponent } from "../navegacao/navegacao.component";
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-dashboard',
   imports: [
-    NavegacaoComponent,
     CommonModule,
     TeddyBotaoComponent,
     TeddyCardComponent,
     TeddyModalComponent,
     TeddyModalExcluirComponent,
-    FormsModule],
+    FormsModule,
+],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
@@ -49,10 +49,12 @@ export class DashboardComponent {
   totalPaginas = 1;
   paginaAtual = 1;
   clientesPorPagina = 16;
+  clientesSelecionados: clientesResponse[] = [];
 
   constructor(
     private dadosCache: DadosCacheService,
-    private clientesService: ServicoClientesService
+    private clientesService: ServicoClientesService,
+    private toastService: ToastService
   ) {
     this.nome = this.dadosCache.nomeUsuario;
     this.carregarClientes();
@@ -89,7 +91,6 @@ export class DashboardComponent {
   }
 
   serviceCadastrarCliente() {
-    console.log('Chamou cadastrar cliente');
     const clienteRequest: cleintesRequest = {
       name: this.novoCliente.nome,
       salary: Number(this.novoCliente.salario),
@@ -97,11 +98,12 @@ export class DashboardComponent {
     }
     this.clientesService.criarCliente(clienteRequest).subscribe(
       (res) => {
+        this.toastService.mostrarToast('Cliente criado com sucesso!', 'sucesso');
         this.carregarClientes();
         this.fecharModal();
       },
       (error) => {
-        console.error('Erro ao cadastrar cliente', error);
+        this.toastService.mostrarToast('Sitemas indisponivel, Tente novamente mais tarde', 'erro');
       }
     )
   }
@@ -109,11 +111,13 @@ export class DashboardComponent {
   excluirCliente() {
     this.clientesService.deletarCliente(this.clienteSelecionado).subscribe(
       (res) => {
+        this.toastService.mostrarToast('Cliente excluido com sucesso!', 'sucesso');
+        this.dadosCache.removerClienteSelecionado(this.clienteSelecionado);
         this.carregarClientes();
         this.fecharModal();
       },
       (error) => {
-        console.error('Erro ao excluir cliente', error);
+        this.toastService.mostrarToast('Sitemas indisponivel, Tente novamente mais tarde', 'erro');
       }
     );
   }
@@ -143,8 +147,13 @@ export class DashboardComponent {
     }
     this.clientesService.atualizarCliente(this.clienteSelecionado, clienteRequest).subscribe(
       (res) => {
+        this.toastService.mostrarToast('Cliente editado com sucesso!', 'sucesso');
+        this.dadosCache.atualizarClienteSelecionado(res);
         this.carregarClientes();
         this.fecharModal()
+      },
+      (error) =>{
+        this.toastService.mostrarToast('Sitemas indisponivel, Tente novamente mais tarde', 'erro');
       }
     )
   }
@@ -200,5 +209,9 @@ export class DashboardComponent {
       paginas.push(ultimaPagina);
     }
     return paginas;
+  }
+
+  adicionarClienteSelecionado(cliente: clientesResponse) {
+    this.dadosCache.adicionarClienteSelecionado(cliente);
   }
 }

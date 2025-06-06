@@ -6,3 +6,6 @@ export * from './service/servico-clientes.service';
 export * from './models/clientes';
 export * from './lib/teddy-modal/teddy-modal.component';
 export * from './lib/teddy-modal-excluir/teddy-modal-excluir.component';
+export * from './service/menu-service.service';
+export * from './lib/teddy-toast/teddy-toast.component';
+export * from './service/toast.service';

@@ -1,0 +1,29 @@
+<div class="containerPrincipal" *ngIf="clientes && clientes.length > 0">
+  <div class="clientesTexto">
+    <h3>{{titulo}}</h3>
+    <div *ngIf="clientes.length > 16">
+      <p>
+        {{ clientesPagina }}
+        <input type="text" [(ngModel)]="clientesPorPagina" (change)="aoMudarClientesPorPagina()" style="width: 60px;" />
+      </p></div>
+  </div>
+  <div class="grid">
+    <div *ngFor="let cliente of clientesPaginados">
+      <lib-teddy-card
+        [nome]='cliente.name'
+        tipo="selecionado"
+        [salario]="formatarValor(cliente.salary)"
+        [empresa]="formatarValor(cliente.companyValuation)"
+        (limparSelecionado)="remover(cliente.id)"
+        >
+      </lib-teddy-card>
+    </div>
+  </div>
+  <div>
+    <lib-teddy-botao [texto]="textoBotao" tamanho="grande" estilo="secundario" (clique)="limparTodos()"></lib-teddy-botao>
+  </div>
+</div>
+
+<div class="containerPrincipal" *ngIf="clientes && clientes.length === 0">
+  <h3>{{erro}}</h3>
+</div>

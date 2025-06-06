@@ -1,18 +1,15 @@
 :host {
   display: block;
-  min-height: 100vh;
+  min-height: 90vh;
   background-color: rgba(240, 237, 237, 0.404);
-}
-.navegacao{
-  background-color: white ;
 }
 .containerPrincipal {
   padding: 20px 80px 50px 80px;
 }
 
 .clientesTexto {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .grid {

@@ -3,7 +3,7 @@
   <p>Salário: {{ salario }}</p>
   <p>Empresa: {{ empresa }}</p>
 
-  <div class="icones">
+  <div class="icones" *ngIf="tipo === 'cadastro'">
     <img
       src="selecionar.png"
       alt="Adicionar cliente"
@@ -26,6 +26,16 @@
       tabindex="0"
       (click)="onExcluir()"
       (keydown.enter)="onExcluir()"
+    />
+  </div>
+
+  <div class="icone-retirar" *ngIf="tipo === 'selecionado'">
+    <img
+      src="menos.png"
+      alt="limpar cliente selecionado"
+      tabindex="0"
+      (click)="onLimparSelecionado()"
+      (keydown.enter)="onLimparSelecionado()"
     />
   </div>
 </div>

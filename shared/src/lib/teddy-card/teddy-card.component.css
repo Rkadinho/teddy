@@ -27,3 +27,11 @@
 .excluir {
   color: red;
 }
+
+.icone-retirar {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+  height: 16px;
+  cursor: pointer;
+}

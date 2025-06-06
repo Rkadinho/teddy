@@ -1,6 +1,3 @@
-<div class="navegacao">
-  <app-navegacao></app-navegacao>
-</div>
 <div class="containerPrincipal">
   <div class="clientesTexto">
     <p><strong>{{listaClientes.length}}</strong>{{clientesEncontrados}}</p>
@@ -13,7 +10,8 @@
         [salario]="formatarValor(cliente.salary)"
         [empresa]="formatarValor(cliente.companyValuation)"
         (editar)="editarCliente(cliente)"
-        (excluir)="excluirClienteModal(cliente)">
+        (excluir)="excluirClienteModal(cliente)"
+        (adicionar)="adicionarClienteSelecionado(cliente)">
       </lib-teddy-card>
     </div>
   </div>

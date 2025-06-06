@@ -1,0 +1,19 @@
+<div class="sidebar" [ngClass]="{'none': !abrirMenu}" *ngIf="abrirMenu">
+  <div class="logo">
+    <img src="teddyLogo.png" alt="Teddy Logo" />
+  </div>
+  <div class="setaFechar">
+    <img src="seta.png" alt="fechar" (click)="fechar()" tabindex="0" (keydown.enter)="fechar()"/>
+  </div>
+  <nav class="menu">
+    <a routerLink="/dashboard" routerLinkActive="link-ativo" class="menu-item">
+      <img src="cliente.png" class="icones"/>
+      {{clientes}}
+    </a>
+
+    <a routerLink="/clientesSelecionados" routerLinkActive="link-ativo" class="menu-item selecionados">
+      <img src="clienteSelecionado.png" class="icones"/>
+      {{clientesSelecionados}}
+    </a>
+  </nav>
+</div>

@@ -16,8 +16,12 @@
     "baseUrl": ".",
     "paths": {
       "@teddy/lib": ["shared/src/index.ts"],
+      "clientesSelecionados/Routes": [
+        "clientesSelecionados/src/app/remote-entry/entry.routes.ts"
+      ],
       "dashboard/Routes": ["dashboard/src/app/remote-entry/entry.routes.ts"],
-      "inicio/Routes": ["inicio/src/app/remote-entry/entry.routes.ts"]
+      "inicio/Routes": ["inicio/src/app/remote-entry/entry.routes.ts"],
+      "menus/Routes": ["menus/src/app/remote-entry/entry.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
