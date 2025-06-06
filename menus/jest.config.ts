@@ -2,7 +2,9 @@ export default {
   displayName: 'menus',
   preset: '../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../coverage/menus',
+  coverageDirectory: 'coverage',
+  collectCoverage: true,
+  coverageReporters: ['html', 'text'],
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

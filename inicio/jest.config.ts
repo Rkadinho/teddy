@@ -2,7 +2,9 @@ export default {
   displayName: 'inicio',
   preset: '../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../coverage/inicio',
+  coverageDirectory: 'coverage',
+  collectCoverage: true,
+  coverageReporters: ['html', 'text'],
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
