@@ -4,7 +4,12 @@
   "license": "MIT",
   "scripts": {
     "start": "npx nx serve appPrincipal",
-    "build": "ng build --configuration=production",
+    "build": "npx nx build appPrincipal --configuration=production",
+    "build:appPrincipal": "npx nx run appPrincipal:build",
+    "build:inicio": "npx nx run inicio:build",
+    "build:dashboard": "npx nx dashboard:build",
+    "build:clientes": "npx nx run clientes:build",
+    "build:menus": "npx nx run menus:build",
     "test": "npx nx run-many --target=test --all --parallel --codeCoverage",
     "test:app": "nx test appPrincipal --codeCoverage",
     "test:clientes": "nx test clientesSelecionados --codeCoverage",
