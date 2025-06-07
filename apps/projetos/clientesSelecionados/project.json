@@ -10,7 +10,7 @@
       "executor": "@nx/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "apps/projetos/dist/clientesSelecionados",
+        "outputPath": "dist/apps/clientesSelecionados",
         "index": "apps/projetos/clientesSelecionados/src/index.html",
         "main": "apps/projetos/clientesSelecionados/src/main.ts",
         "polyfills": ["zone.js"],
