@@ -3,3 +3,8 @@ dist
 .git
 .gitignore
 Dockerfile
+dist
+tmp
+coverage
+.vscode
+*.log

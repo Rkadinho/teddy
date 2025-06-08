@@ -15,13 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@teddy/lib": ["shared/src/index.ts"],
+      "@teddy/lib": ["apps/shared/src/index.ts"],
       "clientesSelecionados/Routes": [
-        "clientesSelecionados/src/app/remote-entry/entry.routes.ts"
+        "apps/projetos/clientesSelecionados/src/app/remote-entry/entry.routes.ts"
       ],
-      "dashboard/Routes": ["dashboard/src/app/remote-entry/entry.routes.ts"],
-      "inicio/Routes": ["inicio/src/app/remote-entry/entry.routes.ts"],
-      "menus/Routes": ["menus/src/app/remote-entry/entry.routes.ts"]
+      "dashboard/Routes": ["apps/projetos/dashboard/src/app/remote-entry/entry.routes.ts"],
+      "inicio/Routes": ["apps/projetos/inicio/src/app/remote-entry/entry.routes.ts"],
+      "menus/Routes": ["apps/projetos/menus/src/app/remote-entry/entry.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
