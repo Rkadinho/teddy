@@ -4,6 +4,10 @@
   "license": "MIT",
   "scripts": {
     "start": "npx nx serve appPrincipal",
+    "start:inicio": "npx nx serve inicio",
+    "start:menus": "npx nx serve menus",
+    "start:dashboard": "npx nx serve dashboard",
+    "start:clientes": "npx nx serve clientesSelecionados",
     "build": "npx nx build appPrincipal --configuration=production",
     "build:appPrincipal": "npx nx run appPrincipal:build",
     "build:inicio": "npx nx run inicio:build",

@@ -1,13 +1,19 @@
-import { getGreeting } from '../support/app.po';
-
 describe('inicio-e2e', () => {
-  beforeEach(() => cy.visit('/'));
+  beforeEach(() => {
+    cy.visit('/');
+  });
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+  it('deve exibir título, input e botão desativado inicialmente', () => {
+    cy.contains('Olá, seja bem-vindo!');
+    cy.get('input[placeholder="Digite o seu nome:"]').should('exist');
+    cy.get('button').contains('Entrar').should('be.disabled');
+  });
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains(/Welcome/);
+  it('deve permitir digitar nome, habilitar botão e redirecionar para /dashboard', () => {
+    cy.get('input[placeholder="Digite o seu nome:"]').type('João');
+
+    cy.get('button').contains('Entrar').should('not.be.disabled').click();
+
+    cy.url().should('include', '/dashboard');
   });
 });
