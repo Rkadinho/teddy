@@ -35,3 +35,20 @@
   height: 16px;
   cursor: pointer;
 }
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 88%;
+    min-width: 88%;
+    min-height: 90px;
+    max-height: 90px;
+    text-align: center;
+    font-size: x-small;
+    padding: 5px;
+  }
+
+  .icones {
+    margin-top: 8px;
+    height: 12px;
+  }
+}

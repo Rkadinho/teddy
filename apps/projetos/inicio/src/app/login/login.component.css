@@ -6,3 +6,9 @@
   height: 100vh;
   font-weight: bold;
 }
+
+@media (max-width: 480px) {
+  form {
+    min-width: 90%;
+  }
+}

@@ -30,3 +30,18 @@
   font-size: 25px;
   cursor: pointer;
 }
+
+@media (max-width: 480px) {
+  .modal-box {
+    width: 80%;
+    max-width: 100%;
+  }
+  .texto {
+    font-size: small;
+  }
+
+  .modal-titulo h3 {
+    font-size: medium;
+
+  }
+}

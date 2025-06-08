@@ -17,3 +17,25 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 480px) {
+  :host {
+    min-height: 92vh;
+    width: 100%;
+  }
+
+  .containerPrincipal {
+    padding: 5px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-right: 10px;
+  }
+
+  .clientesTexto, .botao {
+    margin-left: 10px;
+  }
+}

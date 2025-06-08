@@ -27,3 +27,10 @@
 .input-padrao-erro {
   border-color: rgb(255, 0, 0);
 }
+
+@media (max-width: 480px) {
+  .input {
+    width: 100%;
+    height: 60px;
+  }
+}

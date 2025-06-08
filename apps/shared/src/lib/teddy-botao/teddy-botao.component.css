@@ -46,3 +46,13 @@
   color: white;
   background-color: #f25c05;
 }
+
+@media (max-width: 480px) {
+  .medio {
+    width: 100%;
+    height: 60px;
+  }
+  .secundario {
+    font-size: small;
+  }
+}

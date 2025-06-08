@@ -8,7 +8,7 @@ import { DadosCacheService,
         cleintesRequest,
         TeddyModalExcluirComponent,
         ToastService} from '@teddy/lib';
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 @Component({
@@ -24,7 +24,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
   nome = ''
   clientesEncontrados = ' clientes encontrados';
   clientesPagina = 'Clientes por página:';
@@ -51,13 +51,19 @@ export class DashboardComponent {
   clientesPorPagina = 16;
   clientesSelecionados: clientesResponse[] = [];
 
+  ngOnInit(): void {
+    if (window.innerWidth <= 480) {
+      this.clientesPorPagina = 10;
+    }
+    this.carregarClientes();
+  }
+
   constructor(
     private dadosCache: DadosCacheService,
     private clientesService: ServicoClientesService,
     private toastService: ToastService
   ) {
     this.nome = this.dadosCache.nomeUsuario;
-    this.carregarClientes();
   }
 
   carregarClientes() {

@@ -36,3 +36,32 @@
 .divider {
   border-bottom: 1px solid rgba(88, 86, 86, 0.377);
 }
+
+@media (max-width: 480px) {
+  .containerPrincipal {
+    width: 50%;
+    padding: 16px 40px 0px 20px;
+    margin-bottom: 0px;
+  }
+
+  .iconeMenu {
+    width: 10px;
+    height: 10px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .menuHorizontal {
+    align-items: center;
+    text-align: center;
+    font-size: x-small;
+  }
+
+  .textoBoasVindas {
+    margin-left: 25px;
+    font-size: x-small;
+    text-align: center;
+  }
+}

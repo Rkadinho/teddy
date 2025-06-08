@@ -1,7 +1,7 @@
 <div class="containerPrincipal">
   <div class="clientesTexto">
     <p><strong>{{listaClientes.length}}</strong>{{clientesEncontrados}}</p>
-    <p>{{clientesPagina}} <input type="text" min="1" [(ngModel)]="clientesPorPagina" (change)="aoMudarClientesPorPagina()" style="width: 60px;"/></p>
+    <p>{{clientesPagina}} <input type="text" [(ngModel)]="clientesPorPagina" (change)="aoMudarClientesPorPagina()" style="width: 60px;"/></p>
   </div>
   <div class="grid">
     <div *ngFor="let cliente of listaClientes">

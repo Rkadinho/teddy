@@ -7,7 +7,7 @@
         class="iconeMenu"
         (click)="toggleMenu()"
         (keydown.enter)="toggleMenu()" tabindex="0"/>
-      <img src="teddyLogo.png" alt="Icone Menu"/>
+      <img src="teddyLogo.png" alt="Icone Menu" class="logo"/>
     </div>
     <div class="menuHorizontal">
       <p class="mr-20">
@@ -29,7 +29,7 @@
       <p><a href="/" (click)="sair()">{{abaSair}}</a></p>
     </div>
     <div>
-      <p>{{textoBoasVindas}}<strong class="nome">{{this.nome}}</strong></p>
+      <p class="textoBoasVindas">{{textoBoasVindas}}<strong class="nome">{{this.nome}}</strong></p>
     </div>
   </div>
 </div>

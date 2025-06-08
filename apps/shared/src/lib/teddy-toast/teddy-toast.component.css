@@ -31,3 +31,15 @@
   margin-left: 12px;
   filter: brightness(0) invert(1);
 }
+
+@media (max-width: 480px) {
+  .toast {
+    padding: 2px;
+    font-size: small;
+  }
+  .fechar {
+    height: 8px;
+    width: 8px;
+  }
+}
+

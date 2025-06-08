@@ -50,3 +50,28 @@
   color: white
 }
 
+@media (max-width: 480px) {
+  :host {
+    min-height: 92vh;
+    width: 100%;
+  }
+
+  .containerPrincipal {
+    padding: 5px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-right: 10px;
+  }
+
+  .clientesTexto {
+    font-size: small;
+    display: flex;
+    align-items: center;
+    text-align: end;
+    margin-right: 10px;
+  }
+}
